@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <!--<meta charset="UTF-8">-->
+	<style>
+	* {
+	    box-sizing: border-box;
+	}
+
+	/* Create two equal columns that floats next to each other */
+	.column {
+	    float: left;
+	    width: 50%;
+	    padding: 10px;
+	}
+
+	/* Clear floats after the columns */
+	.row:after {
+	    content: "";
+	    display: table;
+	    clear: both;
+	}
+	</style>
+
+  <title>Text to Image</title>
+
+</head>
+		<h1> Text to Image Search</h1>		
+		<h2> Generate images given text </h2>	
+
+
+<form method='GET' action="generate">
+	<p>Text: <input type='text' name='text' value=''></p>
+	<p><input type='submit' value='Generate'/></p>
+</form>
+
+ <!--button type="button" onclick="location.href='generate';">Generate</button--> 
+
+<body style="background-color:#F2F2F2 ">
+
+	<h3> Text: </h3>
+	<p> {{variable.text}} </p>
+
+	<h3> Images </h3>
+	<img src = {{variable.image_1}}>
+	<p> {{variable.caption_1}} </p>
+	<img src = {{variable.image_2}}>
+	<p> {{variable.caption_2}} </p>
+	<img src = {{variable.image_3}}>
+	<p> {{variable.caption_3}} </p>
+	<img src = {{variable.image_4}}>
+	<p> {{variable.caption_4}} </p>
+	<img src = {{variable.image_5}}>
+	<p> {{variable.caption_5}} </p>
+
+
+
+</body>
+</html>
