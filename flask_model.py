@@ -18,6 +18,7 @@ sys.path.append(os.getcwd())#os.path.abspath('/home/bsong/'))
 app = Flask(__name__)
 
 work_dir = 'C:/Users/songb/Documents/Python Scripts/Text-to-Image-Recommendation-master/'
+global dummy, df
 
 class similarity:
 	'''
@@ -103,20 +104,8 @@ def import_things():
 
 	return dummy, df
 
-global dummy, df
 
 
-@app.route('/generate', methods = ['GET'])
-
-
-def generate_page():
-
-	# model page
-	text = request.args.get('text')
-	string_output = print_results(text)
-	return render_template('generate_page.html', variable=string_output)
-
-	   
 def print_results(test_string):
 	'''
 	Print out the results of the model given a test string. May put this in the similarity class.
@@ -138,6 +127,16 @@ def print_results(test_string):
 		print(err)
 
 	return outputs
+
+@app.route('/generate', methods = ['GET'])
+def generate_page():
+
+	# model page
+	text = request.args.get('text')
+	string_output = print_results(text)
+	return render_template('generate_page.html', variable=string_output)
+
+	   
 
 
 if __name__ == '__main__':
